@@ -1,0 +1,16 @@
+@import "base/colors";
+
+.control-bar {
+  padding: 20px 20px 30px 20px;
+  margin-bottom: 5px;
+  background: $gray-light;
+
+  h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  input {
+    margin: 0 5px 0 20px;
+  }
+}

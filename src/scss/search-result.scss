@@ -1,0 +1,10 @@
+@import "base/colors";
+
+.search-result {
+  position: relative;
+  height: calc(100% - 175px);
+  min-height: 400px;
+  padding: 20px 20px 30px 20px;
+  border: solid 2px darken($gray-light, 5%);
+  overflow: auto;
+}
