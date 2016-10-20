@@ -1,0 +1,34 @@
+{
+  "name": "cep-search",
+  "version": "0.1.0",
+  "description": "Simple react app to find a address based on CEP code and plot on map",
+  "main": "index.js",
+  "repository": {
+    "url": "http://github.com/vagnervjs/cep-search",
+    "type": "git"
+  },
+  "author": "Vagner Santana",
+  "license": "MIT",
+  "dependencies": {
+    "react": "15.3.2",
+    "react-dom": "15.3.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "file-loader": "^0.9.0",
+    "node-sass": "^3.10.1",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "scripts": {
+    "start": "open http://localhost:3000 && webpack-dev-server --config=config/webpack.dev.config.js --progress --colors",
+    "build": "webpack -p --config=config/webpack.config.js --progress --profile --colors"
+  }
+}
