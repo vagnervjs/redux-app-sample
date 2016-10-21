@@ -7,4 +7,16 @@
   padding: 20px 20px 30px 20px;
   border: solid 2px darken($gray-light, 5%);
   overflow: auto;
+
+  .btn-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 24px;
+    height: 24px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    background: url('../assets/close.png');
+  }
 }

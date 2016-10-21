@@ -6,12 +6,15 @@ import '../scss/result-area.scss';
 export default
 class ResultArea extends Component {
     render() {
-        let { address, location } = this.props;
+        let { showResult, address, location, onClose } = this.props;
 
-        if (!Object.keys(address).length) return null;
+        if (!showResult || !Object.keys(address).length) return null;
 
         return (
             <div className="result-area">
+                <button className="btn-close"
+                        title="Fechar"
+                        onClick={onClose}/>
                 <FullAddress address={address}/>
                 <Map location={location}/>
             </div>

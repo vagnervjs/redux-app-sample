@@ -64,3 +64,7 @@ const setLocation = (result, dispatch) => {
         location
     });
 };
+
+export const closeSearchResult = {
+    type: 'CLOSE_SEARCH_RESULT'
+};

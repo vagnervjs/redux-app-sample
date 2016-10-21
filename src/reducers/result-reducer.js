@@ -1,6 +1,7 @@
 const defaultState = {
     address: {},
-    location: {}
+    location: {},
+    showResult: false
 };
 
 const resultReducer = (state = defaultState, action) => {
@@ -16,13 +17,20 @@ const resultReducer = (state = defaultState, action) => {
             let { address } = action;
             return {
                 ...state,
-                address
+                address,
+                showResult: true
             };
         case 'LOCATION_FOUND':
             let { location } = action;
             return {
                 ...state,
-                location
+                location,
+                showResult: true
+            };
+        case 'CLOSE_SEARCH_RESULT':
+            return {
+                ...state,
+                showResult: false
             };
         default:
             return state;
