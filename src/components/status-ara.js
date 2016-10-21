@@ -7,7 +7,7 @@ class Status extends Component {
         let { loading, error, notFound } = this.props;
 
         if (loading)
-            return <div>LOADING...</div>;
+            return <div className="loading"/>;
         else if (error)
             return <Alert severity="error" msg="Erro na consulta" detail={error}/>;
         else if (notFound)

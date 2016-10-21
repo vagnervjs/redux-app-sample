@@ -4,3 +4,12 @@
   height: 100%;
   padding: 20px;
 }
+
+.loading {
+  $loading-size: 178px;
+  position: absolute;
+  margin: 30px calc(50% - #{$loading-size});
+  width: $loading-size;
+  height: $loading-size;
+  background: url('../assets/loading.gif') no-repeat;
+}
