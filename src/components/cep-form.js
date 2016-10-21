@@ -11,6 +11,7 @@ class CepForm extends Component {
                 <input type="text"
                        id="cep"
                        name="cep"
+                       placeholder="01230-010"
                        value={value}
                        onChange={({target}) => onChange(target.value)}
                 />

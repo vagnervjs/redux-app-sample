@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux';
-import app from './app-reducer';
+import form from './form-reducer';
+import result from './result-reducer';
+import status from './status-reducer';
 
 export default
 combineReducers({
-    app
+    form,
+    result,
+    status
 });

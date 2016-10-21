@@ -1,9 +1,12 @@
 import { getAddress, getLocation } from '../services/api';
+import { validateCep } from '../services/validate';
 
-export const updateCep = (cep) => ({
-    type: 'CHANGE_CEP',
-    cep
-});
+export const updateCep = (cep) => {
+    return dispatch => dispatch({
+        type: 'CHANGE_CEP',
+        ...validateCep(cep)
+    });
+};
 
 export const searchAddress = (cep) => {
     return dispatch => {

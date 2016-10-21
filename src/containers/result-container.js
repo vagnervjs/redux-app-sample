@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import ResultArea from '../components/result-area';
 
-const mapStateToProps = ({app}) => {
-    let { address, location } = app;
+const mapStateToProps = ({result}) => {
+    let { address, location } = result;
     return { address, location };
 };
 

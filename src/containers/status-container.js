@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import StatusArea from '../components/status-ara';
 
-const mapStateToProps = ({app}) => {
-    let { loading, error, notFound } = app;
+const mapStateToProps = ({status}) => {
+    let { loading, error, notFound } = status;
     return { loading, error, notFound };
 };
 
