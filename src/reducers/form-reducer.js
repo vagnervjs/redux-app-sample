@@ -20,7 +20,7 @@ const formReducer = (state = defaultState, action) => {
             return {
                 ...state,
                 validationEnabled: true,
-                valid, error
+                cep, valid, error
         };
         default:
             return state;

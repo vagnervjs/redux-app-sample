@@ -1,5 +1,6 @@
 import { getAddress, getLocation } from '../services/api';
 import { validateCep } from '../services/validate';
+import { updateQueryString } from '../services/url';
 
 export const updateCep = (value) => {
     return dispatch => dispatch({
@@ -15,7 +16,7 @@ export const searchAddress = (cep) => {
 
         dispatch({
             type: 'VALIDATE',
-            valid, error,
+            cep, valid, error,
         });
 
         if (!valid) return;
@@ -23,6 +24,8 @@ export const searchAddress = (cep) => {
         dispatch({
             type: 'SEARCH_START'
         });
+
+        updateQueryString(cep);
 
         return getAddress(cep)
             .then((result) => {
