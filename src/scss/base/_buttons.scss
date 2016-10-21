@@ -8,6 +8,11 @@
     cursor: pointer;
     outline: none;
 
+    &[disabled] {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
     &-primary {
         color: $white;
         background-color: $primary;
@@ -19,6 +24,10 @@
         }
         &:active {
             background: darken($primary, 40%);
+        }
+
+        &[disabled] {
+            background-color: $primary;
         }
     }
 }

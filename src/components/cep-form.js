@@ -5,12 +5,13 @@ class CepForm extends Component {
     render() {
         let { cep, valid, error, validationEnabled } = this.props;
         let { onChange, onClickSearch } = this.props;
+        let hasError = validationEnabled && !valid;
 
         return (
             <div className="cep-form">
                 <label htmlFor="cep">CEP</label>
 
-                <div className={`form-group ${error ? 'has-error' : ''}`}>
+                <div className={`form-group ${hasError ? 'has-error' : ''}`}>
                     <input type="text"
                            id="cep"
                            name="cep"
@@ -18,7 +19,7 @@ class CepForm extends Component {
                            value={cep}
                            onChange={({target}) => onChange(target.value)}
                     />
-                    {validationEnabled && error ?
+                    {hasError ?
                         <span className="help-block">
                             {error === 'empty' ?
                                 'Informe o CEP para consulta' :
@@ -29,7 +30,7 @@ class CepForm extends Component {
                 </div>
 
                 <button className="btn btn-primary"
-                        disabled={validationEnabled && !valid}
+                        disabled={hasError}
                     onClick={() => onClickSearch(cep)}>
                     Buscar
                 </button>

@@ -14,3 +14,23 @@ label {
   font-weight: 100;
   font-size: 13px;
 }
+
+.form-group {
+  display: inline-block;
+
+  .help-block {
+    position: absolute;
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  &.has-error {
+    input {
+      border-color: $error;
+    }
+    .help-block {
+      color: $error;
+    }
+  }
+}
