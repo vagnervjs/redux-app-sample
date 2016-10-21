@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import CepForm from './cep-form';
+import CepFormContainer from '../containers/cep-form-container';
 import '../scss/control-bar.scss';
 
 export default
@@ -8,7 +8,7 @@ class ControlBar extends Component {
         return (
             <div className="control-bar">
                 <h2>Consultar</h2>
-                <CepForm/>
+                <CepFormContainer/>
             </div>
         )
     }

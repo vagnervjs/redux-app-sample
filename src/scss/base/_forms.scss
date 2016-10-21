@@ -3,7 +3,11 @@ input {
   padding: 6px 10px;
   font-size: 12px;
   border: solid 1px $gray-dark;
-  outline: none
+  outline: none;
+
+  &:focus {
+    border-color: $primary;
+  }
 }
 
 label {
