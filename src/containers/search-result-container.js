@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import SearchResult from '../components/search-result';
 
 const mapStateToProps = ({app}) => {
-    let { address, loading, error, notFound } = app;
-    return { address, loading, error, notFound };
+    let { address, location, loading, error, notFound } = app;
+    return { address, location, loading, error, notFound };
 };
 
 const mapDispatchToProps = (dispatch) => {

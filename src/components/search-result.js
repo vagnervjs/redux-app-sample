@@ -7,7 +7,7 @@ import '../scss/search-result.scss';
 export default
 class SearchResult extends Component {
     render() {
-        let { address, loading, error, notFound } = this.props;
+        let { address, location, loading, error, notFound } = this.props;
 
         if (loading)
             return <div>LOADING...</div>;
@@ -21,7 +21,7 @@ class SearchResult extends Component {
         return (
             <div className="search-result">
                 <FullAddress address={address}/>
-                <Map/>
+                <Map location={location}/>
             </div>
         )
     }

@@ -1,4 +1,4 @@
-import { getAddress } from '../services/api';
+import { getAddress, getLocation } from '../services/api';
 
 export const updateCep = (cep) => ({
     type: 'CHANGE_CEP',
@@ -22,11 +22,29 @@ export const searchAddress = (cep) => {
                     dispatch({
                         type: 'SEARCH_NOT_FOUND'
                     });
-                else
+                else {
+                    getLocation(cep)
+                        .then(result => setLocation(result, dispatch));
+
                     dispatch({
                         type: 'SEARCH_DONE',
                         address: result
                     });
+                }
             });
     }
+};
+
+const setLocation = (result, dispatch) => {
+    if (result.status !== 'OK' || (result.results && !result.results.length))
+        return;
+
+    let data = result.results[0];
+    let { geometry } = data;
+    let { location } = geometry;
+
+    dispatch({
+        type: 'LOCATION_FOUND',
+        location
+    });
 };

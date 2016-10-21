@@ -1,6 +1,7 @@
 const defaultState = {
     cep: '',
     address: {},
+    location: {},
     loading: false,
     error: false,
     notFound: false
@@ -34,6 +35,7 @@ const appReducer = (state = defaultState, action) => {
             return {
                 ...state,
                 address: {},
+                location: {},
                 loading: false,
                 error: false,
                 notFound: true
@@ -43,9 +45,16 @@ const appReducer = (state = defaultState, action) => {
             return {
                 ...state,
                 address: {},
+                location: {},
                 loading: false,
                 error,
                 notFound: false
+            };
+        case 'LOCATION_FOUND':
+            let { location } = action;
+            return {
+                ...state,
+                location
             };
         default:
             return state;
