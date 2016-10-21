@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import Header from './header';
 import ControlBar from './control-bar';
-import SearchResultContainer from '../containers/search-result-container';
+import StatusContainer from '../containers/status-container';
+import ResultContainer from '../containers/result-container';
 import '../scss/app.scss';
 
 export default
@@ -11,7 +12,8 @@ class App extends Component {
             <div className="app">
                 <Header/>
                 <ControlBar/>
-                <SearchResultContainer/>
+                <StatusContainer/>
+                <ResultContainer/>
             </div>
         )
     }

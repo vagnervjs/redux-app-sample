@@ -19,7 +19,8 @@ const appReducer = (state = defaultState, action) => {
             };
         case 'SEARCH_START':
             return {
-                ...state,
+                ...defaultState,
+                cep: state.cep,
                 loading: true
             };
         case 'SEARCH_DONE':
