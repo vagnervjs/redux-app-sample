@@ -3,10 +3,8 @@ import { updateCep, searchAddress } from '../actions';
 import CepForm from '../components/cep-form';
 
 const mapStateToProps = ({form}) => {
-    let { cep } = form;
-    return {
-        value: cep
-    };
+    let { cep, valid, error, validationEnabled } = form;
+    return { cep, valid, error, validationEnabled };
 };
 
 const mapDispatchToProps = (dispatch) => {

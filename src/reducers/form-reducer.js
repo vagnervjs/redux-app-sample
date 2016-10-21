@@ -1,16 +1,27 @@
 const defaultState = {
     cep: '',
     valid: true,
-    error: false
+    error: false,
+    validationEnabled: false
 };
 
 const formReducer = (state = defaultState, action) => {
     let { type } = action;
+    let { cep, valid, error } = action;
 
     switch (type) {
         case 'CHANGE_CEP':
-            let { cep, valid, error } = action;
-            return { ...state, cep, valid, error };
+            return {
+                ...state,
+                validationEnabled: false,
+                cep, valid, error
+        };
+        case 'VALIDATE':
+            return {
+                ...state,
+                validationEnabled: true,
+                valid, error
+        };
         default:
             return state;
     }

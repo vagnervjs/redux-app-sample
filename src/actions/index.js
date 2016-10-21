@@ -1,15 +1,25 @@
 import { getAddress, getLocation } from '../services/api';
 import { validateCep } from '../services/validate';
 
-export const updateCep = (cep) => {
+export const updateCep = (value) => {
     return dispatch => dispatch({
         type: 'CHANGE_CEP',
-        ...validateCep(cep)
+        ...validateCep(value)
     });
 };
 
 export const searchAddress = (cep) => {
     return dispatch => {
+        let validationConfig = {isRequired: true};
+        let { valid, error } = validateCep(cep, validationConfig);
+
+        dispatch({
+            type: 'VALIDATE',
+            valid, error,
+        });
+
+        if (!valid) return;
+
         dispatch({
             type: 'SEARCH_START'
         });
