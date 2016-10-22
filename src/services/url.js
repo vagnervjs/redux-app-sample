@@ -13,5 +13,6 @@ export const getFromQueryString = (search) => {
 export const updateQueryString = (cep) => {
     if (!history || !cep) return false;
 
-    history.replaceState( {} , '', `/${QS}${cep}`);
+    let { pathname } = window.location;
+    history.replaceState( {} , '', `${pathname}${QS}${cep}`);
 };
