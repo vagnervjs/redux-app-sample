@@ -1,12 +1,8 @@
 {
   "name": "cep-search",
   "version": "0.1.0",
-  "description": "Simple react app to find a address based on CEP code and plot on map",
-  "main": "index.js",
-  "repository": {
-    "url": "http://github.com/vagnervjs/cep-search",
-    "type": "git"
-  },
+  "description": "Simple react app to find an address based on CEP code (brazilian postal zip code) and plot a marker on a map",
+  "main": "src/index.js",
   "author": "Vagner Santana",
   "license": "MIT",
   "dependencies": {
